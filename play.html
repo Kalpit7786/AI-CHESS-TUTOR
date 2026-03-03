@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play AI - AI Chess Tutor</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">AI Chess Tutor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="play.html">Play AI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lessons.html">Lessons</a>
+            </li>
+            <li class="nav-item" id="navProfileItem">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item" id="navLoginItem">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        <div class="row">
+
+            <div class="col-md-7 d-flex justify-content-center">
+
+                <div style="width: 100%; max-width: 500px;">
+
+                    <div
+                        class="d-flex justify-content-between align-items-center bg-dark text-white p-2 rounded mb-1 shadow-sm">
+                        <div><span class="fw-bold">🤖 Grandmaster AI</span></div>
+                        <div class="badge bg-secondary">Rating: 2800</div>
+                    </div>
+
+                   <div class="card p-1 shadow-sm border-0 no-hover">
+                        <div id="myBoard" style="width: 100%;"></div>
+                    </div>
+
+                    <div
+                        class="d-flex justify-content-between align-items-center bg-white text-dark p-2 rounded mt-1 shadow-sm border">
+                        <div><span class="fw-bold" id="playerNameDisplay">👤 Guest Player</span></div>
+                        <div class="badge bg-success">Rating: 1200</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 mt-4 mt-md-0">
+                <div class="card p-4 shadow-sm h-100">
+                    <h4 class="mb-3">AI Tutor Feedback</h4>
+
+                    <div class="alert alert-info fw-bold" role="alert" id="aiMessage">
+                        Welcome! Make your first move.
+                    </div>
+
+                    <hr>
+
+                    <h5>Game Controls</h5>
+                    <div class="d-grid gap-2">
+                        <button id="startBtn" class="btn btn-primary">Start New Game</button>
+                        <button id="undoBtn" class="btn btn-warning">Undo Last Move</button>
+                        <button id="flipBtn" class="btn btn-outline-primary">Flip Board</button>
+                        <button id="clearBtn" class="btn btn-outline-dark">Clear Board</button>
+                    </div>
+
+                    <div class="mt-4">
+                        <h5>Difficulty Level</h5>
+                        <select class="form-select" id="difficultyLevel">
+                            <option value="Beginner">Beginner (Fast & Random)</option>
+                            <option value="Medium" selected>Club Player (Medium & Greedy)</option>
+                            <option value="Hard">Grandmaster (Hard & Calculates)</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-4">
+                        <h5>Move History</h5>
+                        <div id="moveHistory" class="p-2 border rounded"
+                            style="height: 120px; overflow-y: auto; background-color: #fff; font-family: monospace; font-size: 1.1em;">
+                        </div>
+
+                        <button id="downloadBtn" class="btn btn-sm btn-outline-secondary mt-2 w-100">📥 Download Match
+                            Data</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="promotionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header" style="background-color: #5c4033; color: white;">
+                    <h5 class="modal-title fw-bold mx-auto">Choose Promotion</h5>
+                </div>
+                <div class="modal-body text-center p-4">
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-outline-dark promo-btn fs-1 p-2" data-piece="q">♕</button>
+                        <button class="btn btn-outline-dark promo-btn fs-1 p-2" data-piece="r">♖</button>
+                        <button class="btn btn-outline-dark promo-btn fs-1 p-2" data-piece="b">♗</button>
+                        <button class="btn btn-outline-dark promo-btn fs-1 p-2" data-piece="n">♘</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

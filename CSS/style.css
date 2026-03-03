@@ -1,0 +1,122 @@
+.hero-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.hero-text {
+    padding-top: 20px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #555555;
+    margin-bottom: 25px; /* Replaces the <br> tag */
+}
+
+.custom-ml {
+    margin-left: 10px;
+}
+
+/* Styling the image to look like a polished app */
+.hero-image {
+    max-width: 90%;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px gray;
+}
+
+/* --- GRANDMASTER THEME --- */
+body {
+    background-color: #f8f5f2 !important; /* Warm Ivory/Cream */
+    color: #2c1e16 !important; /* Dark Espresso Brown */
+}
+
+/* Update the Navbar to a rich brown */
+.navbar {
+    background-color: #3e2723 !important; 
+}
+
+/* Update the Feature Cards */
+.card {
+    background-color: #ffffff !important; /* Pure white resting on the cream */
+    color: #2c1e16 !important;
+    border: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Change the Primary Buttons to a rich Walnut Brown */
+.btn-primary {
+    background-color: #5c4033 !important;
+    border-color: #5c4033 !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover {
+    background-color: #422d24 !important;
+}
+
+/* Change Outline Buttons to a muted Gold */
+.btn-outline-dark {
+    color: #b8860b !important;
+    border-color: #b8860b !important;
+}
+
+.btn-outline-dark:hover {
+    background-color: #b8860b !important;
+    color: #ffffff !important;
+}
+
+/* --- CUSTOM SCROLLBAR (Grandmaster Theme) --- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f8f5f2; /* Matches your cream background */
+}
+::-webkit-scrollbar-thumb {
+    background: #5c4033; /* Matches your Walnut brown buttons */
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3e2723; /* Darker brown when you hover over the scrollbar */
+}
+
+/* --- 3D HOVER ANIMATIONS --- */
+/* This tells the browser to make the movement smooth, not instant */
+.card:not(.no-hover), .btn {
+    transition: all 0.3s ease-in-out !important;
+}
+
+/* Lift the card up, EXCEPT if it has the 'no-hover' class */
+.card:not(.no-hover):hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 20px rgba(92, 64, 51, 0.15) !important; 
+}
+
+/* Add a slight "pop" effect to your buttons */
+.btn:hover {
+    transform: scale(1.03);
+}
+
+/* --- CASCADING LOAD ANIMATION --- */
+/* The base class that hides the card initially */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* The actual animation instructions */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered delays so they load one after another */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }

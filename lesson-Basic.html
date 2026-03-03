@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Lesson - AI Chess Tutor</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Custom styling for our interactive piece menu */
+        .nav-pills .nav-link {
+            color: #5c4033; /* Walnut Brown */
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+            background-color: #5c4033;
+            color: white;
+            transform: scale(1.05);
+        }
+        .piece-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5c4033;">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">AI Chess Tutor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="play.html">Play AI</a></li>
+            <li class="nav-item"><a class="nav-link active" href="lessons.html">Lessons</a></li>
+            <li class="nav-item" id="navProfileItem"><a class="nav-link" href="profile.html">Profile</a></li>
+            <li class="nav-item" id="navLoginItem"><a class="nav-link" href="login.html">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <span class="badge bg-success mb-2 fs-6">Beginner Course</span>
+                <h2 class="fw-bold">The Rules of Combat</h2>
+                <p class="text-muted">Tap on any piece to learn its secrets, movements, and strategic value.</p>
+                <hr style="width: 100px; margin: 0 auto; border-color: #5c4033; border-width: 3px;">
+            </div>
+        </div>
+
+        <div class="row mt-5 mb-5">
+            
+            <div class="col-md-3 mb-4">
+                <div class="card p-3 shadow-sm border-0 bg-light">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active text-start" data-bs-toggle="pill" data-bs-target="#pawn-tab" type="button">
+                            <span class="piece-icon">♙</span> Pawn
+                        </button>
+                        <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#knight-tab" type="button">
+                            <span class="piece-icon">♘</span> Knight
+                        </button>
+                        <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#bishop-tab" type="button">
+                            <span class="piece-icon">♗</span> Bishop
+                        </button>
+                        <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#rook-tab" type="button">
+                            <span class="piece-icon">♖</span> Rook
+                        </button>
+                        <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#queen-tab" type="button">
+                            <span class="piece-icon">♕</span> Queen
+                        </button>
+                        <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#king-tab" type="button">
+                            <span class="piece-icon">♔</span> King
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    
+                    <div class="tab-pane fade show active" id="pawn-tab" role="tabpanel">
+                        <div class="card p-4 shadow-sm border-0 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="fw-bold m-0"><span class="piece-icon">♙</span> The Pawn</h3>
+                                <span class="badge bg-secondary fs-6">Value: 1 Point</span>
+                            </div>
+                            <h5 class="text-primary mt-3">How it Moves:</h5>
+                            <p>Pawns are the foot soldiers. They move straight forward, one square at a time. However, on their very first move, they have the option to march forward <strong>two squares</strong>.</p>
+                            <h5 class="text-danger mt-3">How it Captures:</h5>
+                            <p>Pawns are unique: they capture differently than they move! They capture enemy pieces by moving one square diagonally forward.</p>
+                            <div class="alert alert-info mt-3 border-0 shadow-sm">
+                                <strong>💡 Special Rule: Promotion!</strong> If a courageous pawn makes it all the way to the opposite side of the board, it magically transforms into any other piece (usually a Queen!).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="knight-tab" role="tabpanel">
+                        <div class="card p-4 shadow-sm border-0 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="fw-bold m-0"><span class="piece-icon">♘</span> The Knight</h3>
+                                <span class="badge bg-secondary fs-6">Value: 3 Points</span>
+                            </div>
+                            <h5 class="text-primary mt-3">How it Moves & Captures:</h5>
+                            <p>The Knight moves in an <strong>"L" shape</strong>: two squares in one direction, and then one square at a 90-degree angle (or one square, then two squares).</p>
+                            <div class="alert alert-warning mt-3 border-0 shadow-sm">
+                                <strong>💡 Special Power: Leaping!</strong> The Knight is the ONLY piece on the board that can jump over other pieces (both yours and the enemy's) to reach its destination.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="bishop-tab" role="tabpanel">
+                        <div class="card p-4 shadow-sm border-0 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="fw-bold m-0"><span class="piece-icon">♗</span> The Bishop</h3>
+                                <span class="badge bg-secondary fs-6">Value: 3 Points</span>
+                            </div>
+                            <h5 class="text-primary mt-3">How it Moves & Captures:</h5>
+                            <p>Bishops move diagonally across the board. They can move as many squares as they want in a single turn, as long as their path is not blocked.</p>
+                            <p class="text-muted"><em>Note: Because of how they move, a Bishop that starts on a white square will stay on white squares for the entire game! You have one Light-Squared Bishop and one Dark-Squared Bishop.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="rook-tab" role="tabpanel">
+                        <div class="card p-4 shadow-sm border-0 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="fw-bold m-0"><span class="piece-icon">♖</span> The Rook</h3>
+                                <span class="badge bg-secondary fs-6">Value: 5 Points</span>
+                            </div>
+                            <h5 class="text-primary mt-3">How it Moves & Captures:</h5>
+                            <p>The Rook (sometimes called the Castle) is a heavy hitter. It moves in straight lines—forward, backward, left, or right—as many squares as it wants, as long as the path is clear.</p>
+                            <div class="alert alert-info mt-3 border-0 shadow-sm">
+                                <strong>💡 Pro Tip:</strong> Rooks are most powerful in the "endgame" when the board is clear, or when two Rooks link up on the same row!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="queen-tab" role="tabpanel">
+                        <div class="card p-4 shadow-sm border-0 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="fw-bold m-0"><span class="piece-icon">♕</span> The Queen</h3>
+                                <span class="badge bg-secondary fs-6">Value: 9 Points</span>
+                            </div>
+                            <h5 class="text-primary mt-3">How it Moves & Captures:</h5>
+                            <p>The Queen is the most powerful piece on the board. She combines the powers of the Rook and the Bishop! She can move any number of squares in a straight line (horizontally or vertically) AND diagonally.</p>
+                            <p>Because she is so valuable, you must protect her at all costs. Losing your Queen early usually means losing the game.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="king-tab" role="tabpanel">
+                        <div class="card p-4 shadow-sm border-0 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="fw-bold m-0"><span class="piece-icon">♔</span> The King</h3>
+                                <span class="badge bg-danger fs-6">Value: The Entire Game</span>
+                            </div>
+                            <h5 class="text-primary mt-3">How it Moves & Captures:</h5>
+                            <p>The King is the most important piece, but also one of the weakest. He can only move one square at a time in any direction (forward, backward, left, right, or diagonally).</p>
+                            <div class="alert alert-danger mt-3 border-0 shadow-sm">
+                                <strong>⚠️ The Golden Rule:</strong> You cannot make a move that puts your own King into danger (Check). If your King is attacked and cannot escape, it is Checkmate, and you lose!
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="row mt-4 mb-5">
+            <div class="col-12 d-flex justify-content-between">
+                <a href="lessons.html" class="btn btn-outline-secondary">← Back to Courses</a>
+                <a href="#" class="btn btn-primary px-4">Take the Quiz →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

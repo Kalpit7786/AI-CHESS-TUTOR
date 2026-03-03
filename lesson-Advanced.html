@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Lesson - AI Chess Tutor</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5c4033;">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">AI Chess Tutor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="play.html">Play AI</a></li>
+            <li class="nav-item"><a class="nav-link active" href="lessons.html">Lessons</a></li>
+            <li class="nav-item" id="navProfileItem"><a class="nav-link" href="profile.html">Profile</a></li>
+            <li class="nav-item" id="navLoginItem"><a class="nav-link" href="login.html">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        <div class="row align-items-center">
+            
+           <div class="col-md-6 mb-4">
+                <span class="badge bg-danger mb-2 fs-6">Advanced Puzzle</span>
+                <h2 class="fw-bold">Dynamic Tactics</h2>
+                <p class="text-muted fs-5">Can you find the grandmaster sequence?</p>
+                <hr style="border-color: #5c4033; border-width: 3px;">
+                
+                <div class="card p-4 border-0 shadow-sm bg-light mt-4">
+                    <h5 class="fw-bold">Your Goal:</h5>
+                    <p>Find the best move for your color. This puzzle is pulled fresh from the Lichess database today!</p>
+                    <button id="resetPuzzleBtn" class="btn btn-outline-secondary mt-2 w-50">Retry Puzzle</button>
+                </div>
+                
+                <div class="card border-primary shadow-sm mt-4">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        🤖 AI Coach
+                    </div>
+                    <div class="card-body">
+                        <p id="coachMessage" class="fst-italic mb-0">"I'm analyzing the board. Make your move, or ask me for a hint if you get stuck!"</p>
+                        <button id="hintBtn" class="btn btn-sm btn-outline-primary mt-3">💡 Give me a Hint</button>
+                    </div>
+                </div>
+                
+                <div id="puzzleSuccess" class="alert alert-success mt-4 shadow-sm border-0" style="display: none;">
+                    <h4 class="alert-heading">🎉 Brilliant!</h4>
+                    <p>You solved the puzzle perfectly. The AI Coach is proud.</p>
+                    <hr>
+                    <a href="lessons.html" class="btn btn-success">Complete Lesson</a>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-md-6 d-flex justify-content-center">
+                <div class="card p-2 shadow-lg border-0 no-hover" style="width: 100%; max-width: 350px;">
+                    <div id="puzzleBoard" style="width: 100%;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="liveToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body fw-bold" id="toastMessage"></div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

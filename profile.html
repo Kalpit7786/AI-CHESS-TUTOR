@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - AI Chess Tutor</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5c4033;">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">AI Chess Tutor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="play.html">Play AI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lessons.html">Lessons</a>
+            </li>
+            <li class="nav-item" id="navProfileItem">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item" id="navLoginItem">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        <div class="row g-4">
+            
+            <div class="col-md-4">
+                <div class="card p-4 shadow-sm text-center border-0 h-100">
+                    <div class="mx-auto bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 100px; height: 100px; font-size: 3rem;">
+                        👤
+                    </div>
+                    <h3 class="fw-bold" id="profileName">Guest User</h3>
+                    <p class="text-muted mb-1" id="profileEmail">Not logged in</p>
+                    <span class="badge bg-success mx-auto mb-3" style="width: fit-content;">Rating: 1200 (Novice)</span>
+                    
+                    <hr>
+                    <p class="small text-muted">Member since: February 2026</p>
+                    <button class="btn btn-outline-danger w-100 mt-auto" id="logoutBtn">Log Out</button>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                
+                <div class="row g-3 mb-4">
+                    <div class="col-sm-4">
+                        <div class="card p-3 shadow-sm border-0 text-center bg-white">
+                            <h5 class="text-muted mb-1">Games Played</h5>
+                            <h2 class="fw-bold mb-0">42</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card p-3 shadow-sm border-0 text-center bg-white">
+                            <h5 class="text-muted mb-1">Win Rate</h5>
+                            <h2 class="fw-bold text-success mb-0">68%</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card p-3 shadow-sm border-0 text-center bg-white">
+                            <h5 class="text-muted mb-1">Lessons Done</h5>
+                            <h2 class="fw-bold text-primary mb-0">3/6</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-4 shadow-sm border-0 mb-4">
+                    <h5 class="fw-bold mb-3">Recent Activity</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                            Played 'Grandmaster AI' (Hard)
+                            <span class="badge bg-success rounded-pill">Won</span>
+                        </li>
+                        <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                            Completed 'Opening Principles' Lesson
+                            <span class="badge bg-primary rounded-pill">+50 XP</span>
+                        </li>
+                        <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                            Played 'Beginner AI' (Easy)
+                            <span class="badge bg-success rounded-pill">Won</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card p-3 shadow-sm border-0 bg-light">
+                    <div class="d-flex align-items-center">
+                        <div class="me-3 fs-3">🎓</div>
+                        <div>
+                            <h6 class="fw-bold mb-0">Developer License</h6>
+                            <small class="text-muted">
+                                Created by <strong>Kalpit Panchal</strong> <br>
+                                Silver Oak University | Enrollment No: 2402031800016 <br>
+                                B.Tech CSE Practical Submission
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
